@@ -1,0 +1,26 @@
+body {
+  min-height: 750px;
+}
+
+.navbar-static-top {
+  margin-bottom: 0px;
+}
+.navbar-default {
+	background-color: #2f2e2e;
+	border-color: white;
+}
+.navbar-default .navbar-brand {
+	color: white;
+}
+.navbar-default .navbar-brand:hover {
+	color: #efe51e;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+	color: #b5b932;
+	background-color: transparent;
+}
+.btn-primary {
+	color: #fff;
+	background-color: #c6bb3e;
+	border-color: #0f0d6f;
+}

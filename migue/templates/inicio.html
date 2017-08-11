@@ -1,0 +1,104 @@
+<!-- Main component for a primary marketing message or call to action -->
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Bienvenidos |
+
+{% endblock %}
+{% load static %}
+<style xmlns="http://www.w3.org/1999/html">
+          {% block style %}
+          .jumbotron {
+            background-color: #000 !important;
+            color:white !important;
+          }
+          .fa-5x {
+	font-size: 5em !important;
+}{% endblock %}
+
+      </style>
+{% block jumbotron %}
+{% if request.user.is_authenticated %}
+
+<div class="container">
+<br/>
+<div class="table-responsive">
+<table class="table table-bordered table-hover table-condensed">
+<tr class="success"><th>CORREO<th>USUARIO<th/>REGISTRO<br/><tr/>     
+</div>
+
+
+{% for instance in queryset %}
+
+    <tr><td>{{ instance }}<td>{{instance.nombre }}<td>{{instance.timestamp|timesince }}<br/><tr/>
+
+{% endfor %}
+
+</table>
+</div>
+
+</div>
+
+
+{% else %}
+
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+    <div class="col-sm-6">
+        <h1>XBOX ONE </h1>
+        <p>Se hablaba de su existencia y hoy Microsoft la ha confirmado durante la celebración del E3</p>
+        <p>Project Scorpio es efectivamente el nombre de la consola de nueva generación aún sin nombre definitivo-</p>
+        <p>
+        <a class="btn btn-lg btn-primary" href="{% url 'registration_register' %}" role="button">Unirse &raquo;</a>
+        </p>
+    </div>
+<div class="col-sm-6"><img src="{% static 'img/xbox.jpg' %}" class="img-responsive"/>
+
+</div></div>
+</div>
+</div>
+{% endif %}
+
+{% endblock %}
+<br/>
+{% block content %}
+
+{% if not request.user.is_authenticated %}
+
+<div class="row">
+    <div class="col-sm-3 pull-right">
+
+     {% if not request.user.is_authenticated %}
+     <p class="lead text-align-center">Suscribirte</p>
+     <form method="post" action="">{% csrf_token %}
+     {{ el_form|crispy }}
+     <input type="submit" value ='Registrame'/>
+     </form>
+     {% else %}
+     <p class="lead text-align-center">{{titulo}}<br/><br/><i class="fa fa-android fa-5x" aria-hidden="true"></i>
+     </p>
+     {% endif %}
+
+    </div>
+ <div class="col-sm-3">
+    <p class="lead text-align-center">Creado con Django Bootstrap <br/><span class="fa-stack fa-5x">
+    <i class="fa fa-circle-o-notch fa-stack-2x"></i>
+    <i class="fa fa-gamepad" aria-hidden="true"></i>
+    </span>
+    </p>
+    </div>
+    <div class="col-sm-3">
+    <p class="lead text-align-center">Ultimo Assassins Creed</p><img src="{%static 'img/x2.jpg'%}" class="img-responsive" />
+    </div>
+    <div class="col-sm-3 text-align-center">
+    <p class="lead">Codigo abierto <br/><br/><span class="fa-stack fa-5x">
+    <i class="fa fa-spinner fa-spin fa-stack-2x"></i>
+    <i class="fa fa-github" aria-hidden="true"></i></span>
+    </p>
+    </div>
+    </div>
+    <hr/>
+
+    {% endif %}
+    {% endblock %}
+

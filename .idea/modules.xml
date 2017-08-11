@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:/control/cprintel/.idea/cprintel.iml" filepath="C:/control/cprintel/.idea/cprintel.iml" />
+      <module fileurl="file://C:/filtros/.idea/filtros.iml" filepath="C:/filtros/.idea/filtros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/miproyect.iml" filepath="$PROJECT_DIR$/.idea/miproyect.iml" />
+      <module fileurl="file://C:/practica/.idea/practica.iml" filepath="C:/practica/.idea/practica.iml" />
+    </modules>
+  </component>
+</project>
